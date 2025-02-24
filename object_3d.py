@@ -7,8 +7,7 @@ import random
 @njit(fastmath=True)
 def any_func(arr, a, b):
     return np.any((arr == a) | (arr == b))
-
-no_of_collisions = 0
+    
 
 class Object3D:
     def __init__(self, render, vertices='', faces=''):
@@ -79,8 +78,9 @@ class Object3D:
         self.vertices = self.vertices @ rotate_z(angle)
 
 class Cube(Object3D):
-    def __init__(self, render):
+    def __init__(self, render, size = 1):
         super().__init__(render)
+        self.size = size
         self.vertices = np.array([(0, 0, 0, 1), (0, 1, 0, 1), (1, 1, 0, 1), (1, 0, 0, 1),
                                   (0, 0, 1, 1), (0, 1, 1, 1), (1, 1, 1, 1), (1, 0, 1, 1)])
         self.faces = np.array([(0, 1, 2, 3), (4, 5, 6, 7), (0, 4, 5, 1), (2, 3, 7, 6), (1, 2, 6, 5), (0, 3, 7, 4)])
@@ -95,7 +95,7 @@ class Cube(Object3D):
 class Point(Object3D):
     def __init__(self, render):
         super().__init__(render)
-        speed_scale = 0.05
+        speed_scale = 0.02
         self.vertices = np.array([
             (0.2+random.uniform(0, 1), 0.4 + random.uniform(0, 1), 0.2 + random.uniform(0, 1),1)])
         self.speed = [speed_scale*random.uniform(0, 1), speed_scale*random.uniform(0, 1), speed_scale*random.uniform(0, 1)]
