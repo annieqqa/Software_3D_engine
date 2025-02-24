@@ -1,6 +1,6 @@
-## Interactive Ideal Gas Simulator
+# Interactive Ideal Gas Simulator based on python 3D engine
 
-# Instructions
+## Instructions
 
 | Key | Description |
 | --- | --- |
@@ -13,5 +13,5 @@
 | `UP/DOWN` | Upward / downward rotation |
 | `LEFT/RIGHT` | Leftward / Rightward rotation |
 
-# References & Acknowledgements
+## References & Acknowledgements
 The 3D engine of this simulation is based on [Software_3D_engine](https://github.com/StanislavPetrovV/Software_3D_engine)
